@@ -4,7 +4,7 @@
 int* get_even(int source[], int n);
 
 int main(){
-    int source[5] = {2,4,16,28,40};
+    int source[5] = {2,4,16,28,53};
     int n = sizeof(source) / sizeof(source[0]);
 
     int* resultPtr = get_even(source, n);
