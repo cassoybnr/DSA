@@ -1,0 +1,1 @@
+These are just a start pack for safe linked-list. main.c is not a program. It will not run. 
