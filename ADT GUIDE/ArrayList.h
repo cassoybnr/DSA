@@ -1,7 +1,7 @@
-#include <stdio.h>
-#include <stdlib.h>
 #ifndef ArrayList_H
 #define ArrayList_H
+#include <stdio.h>
+#include <stdlib.h>
 #include "studtype.h"
 #define MAX 10
 
