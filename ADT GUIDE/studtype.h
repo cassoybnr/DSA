@@ -7,7 +7,7 @@ typedef struct{
     char MI;
 }Name;
 
-typedef stuct{
+typedef struct{
     Name name;
     char course[8];
     int id;

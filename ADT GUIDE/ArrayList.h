@@ -12,7 +12,7 @@ typedef struct {
 
 //Initialize the List
 List initialize(List L){
-    count = 0;
+    L.count = 0;
     return L;
 }
 
@@ -30,12 +30,12 @@ List insertPos(List L, StudPtr data, int position){
         L.count++;
         L.elem[position] = data;
     }
-    return 1;
+    return L;
 }
 
 List deletePost(List L, int position){
     int i;
-    if (positon < 0 || position >= L.count){
+    if (position < 0 || position >= L.count){
         printf("Invalid position");
     } else {
         for (i = position; i < L.count - 1; i++){
@@ -44,7 +44,7 @@ List deletePost(List L, int position){
         L.count--;
         printf("\ndata has been deleted at position %d\n\n", position);
     }
-    return 1;
+    return L;
 }
 
 
@@ -56,7 +56,7 @@ List locate(List L, StudPtr data){
             j = i;
         }
     }
-    return i;
+    return L;
 }
 
 
@@ -77,7 +77,7 @@ List inserSorted (List L, StudPtr data){
         L.count++;
         L.elem[pos] = data;
     }
-    return 1;
+    return L;
 }
 
 void display(List L){
@@ -85,13 +85,13 @@ void display(List L){
     printf("%-15s %-15s %-10s %-5s %-5s\n", "First Name", "Last Name", "Course", "Yr", "ID");
     printf("--------------------------------------------------------------");
 
-    for(i = o; i < L.count; i++){
-        printf("%-15s %-15s %-10s %-5s %-5s\n"
+    for(i = 0; i < L.count; i++){
+        printf("%-15s %-15s %-10s %-5s %-5s\n", 
             L.elem[i]->name.FName,
             L.elem[i]->name.LName,
             L.elem[i]->course,
             L.elem[i]->age,
-            L.elem[i]->id)
+            L.elem[i]->id);
     }
 }
 

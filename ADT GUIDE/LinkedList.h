@@ -126,7 +126,7 @@ void deleteLast(LList* L){
 
 void deletePosLL(LList* L, int index){
     if(index < 0 || index >= L->count){
-        pritnf("Invalid position\n\n");
+        printf("Invalid position\n\n");
     } else {
         if (index == 0){
             deleteStart(L);
@@ -143,7 +143,7 @@ void deletePosLL(LList* L, int index){
 
             free(temp);
             L->count--;
-            pritnf("Node has been successfully deleted at position %d\n\n", index);
+            printf("Node has been successfully deleted at position %d\n\n", index);
         }
     }
 }
