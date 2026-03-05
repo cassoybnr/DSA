@@ -30,8 +30,19 @@ int main()
 
 int canSeeBoard(int column[], int length)
 {
+    int canSee = 0;
+    Stack S;
+    init(&S);
     
-    return canSee;
+    for (int i = 0; i < length; i++) {
+        //stud can only see if they're taller than everyone pushed before them
+        if(top(S) == -1 || column[i] > top(S)) { //is the line empty || am i the tallest in lines so far
+            canSee++;
+            push(&S, column[i]); //new plate on top of the stack
+        }
+    }
+    
+    return canSee; //number of studs that can see the board
 }
 
 void init(Stack *S)
