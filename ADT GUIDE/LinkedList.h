@@ -15,7 +15,7 @@ typedef struct {
     int count;
 }LList;
 
-LList * initialize (){
+LList * initializeLL (){
     LList* L = (LList*)malloc(sizeof(LList));
     if(L == NULL){
         printf("Memory allocation failed.");

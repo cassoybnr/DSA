@@ -11,7 +11,7 @@ typedef struct {
 }List;
 
 //Initialize the List
-List initialize(List L){
+List initializeArr(List L){
     L.count = 0;
     return L;
 }
@@ -33,7 +33,7 @@ List insertPos(List L, StudPtr data, int position){
     return L;
 }
 
-List deletePost(List L, int position){
+List deletePos(List L, int position){
     int i;
     if (position < 0 || position >= L.count){
         printf("Invalid position");
@@ -60,7 +60,7 @@ List locate(List L, StudPtr data){
 }
 
 
-List inserSorted (List L, StudPtr data){
+List insertSorted (List L, StudPtr data){
     int i, pos = L.count;
     if (L.count == MAX){
         printf("The array is already full.");
