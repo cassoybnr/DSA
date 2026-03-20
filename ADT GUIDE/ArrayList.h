@@ -24,7 +24,7 @@ List insertPos(List L, StudPtr data, int position){
     } else if (L.count == MAX) {
         printf("puno na");
     } else {
-        for(i = L.count; i >= position; i--){
+        for(i = L.count; i > position; i--){
             L.elem[i] = L.elem[i - 1];
         }
         L.count++;
@@ -39,7 +39,7 @@ List deletePos(List L, int position){
         printf("Invalid position");
     } else {
         for (i = position; i < L.count - 1; i++){
-            L.elem[i] = L.elem [i - 1];
+            L.elem[i] = L.elem [i + 1];
         }
         L.count--;
         printf("\ndata has been deleted at position %d\n\n", position);
@@ -48,7 +48,7 @@ List deletePos(List L, int position){
 }
 
 
-List locate(List L, StudPtr data){
+int locate(List L, StudPtr data){
     int i, j = -1;
 
     for (i = 0; i < L.count && j == -1; i++){
@@ -56,7 +56,7 @@ List locate(List L, StudPtr data){
             j = i;
         }
     }
-    return L;
+    return j;
 }
 
 
@@ -66,7 +66,6 @@ List insertSorted (List L, StudPtr data){
         printf("The array is already full.");
     } else {
         for (i = 0; i < L.count && L.elem[i]->id < data->id; i++){
-            pos++;
         }
         pos = i;
 
@@ -82,11 +81,11 @@ List insertSorted (List L, StudPtr data){
 
 void display(List L){
     int i;
-    printf("%-15s %-15s %-10s %-5s %-5s\n", "First Name", "Last Name", "Course", "Yr", "ID");
+    printf("%-15s %-15s %-10s %-5d %-5d\n", "First Name", "Last Name", "Course", "Yr", "ID");
     printf("--------------------------------------------------------------");
 
     for(i = 0; i < L.count; i++){
-        printf("%-15s %-15s %-10s %-5s %-5s\n", 
+        printf("%-15s %-15s %-10s %-5d %-5d\n", 
             L.elem[i]->name.FName,
             L.elem[i]->name.LName,
             L.elem[i]->course,

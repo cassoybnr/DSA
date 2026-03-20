@@ -113,9 +113,12 @@ void deleteLast(LList* L){
     } else {
         if(L->head->next == NULL){
             free(L->head);
+            L->head = NULL;
         } else {
             Node* current;
-            for(current = L->head; current->next != NULL; current = current->next){}
+            while(current->next->next != NULL){
+                current = current->next;
+            }
             free(current->next);
             current->next = NULL;
             printf("The last node has been deleted.\n");
@@ -133,7 +136,7 @@ void deletePosLL(LList* L, int index){
         } else if (index == L->count - 1){
             deleteLast(L);            
         } else {
-            Node* current;
+            Node* current = L->head;
             int i;
             for(i = 0; i < index - 1; i++){
                 current = current->next;
@@ -151,6 +154,7 @@ void deletePosLL(LList* L, int index){
 StudPtr retrieve(LList* L, int index){
     if (index > L->count){
         printf("Invalid Index");
+        return NULL;
     } else {
         Node* current;
         int i = 0;

@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
 #include "ArrayList.h"
 #include "studtype.h"
 #include "LinkedList.h"
@@ -84,7 +85,7 @@ int main (){
     display(arr);
 
     //linked list
-    printf("\nLINKED LISTT\n");
+    printf("\nLINKED LIST\n");
     printf("------------------------------------\n");
     head = initializeLL();
 
@@ -92,11 +93,12 @@ int main (){
     insertFirst(head, stud2);
     insertFirst(head, stud3);
     insertLast(head, stud4);
-    insertPosLL(head, unique, 0);
+    insertPosLList(head, unique, 0);
     deleteLast(head);
     deleteStart(head);
-    deletePosLL(head, 3);
+    deletePosLL(head, 2);
 
-    displayLL(head);
+    displayLList(head);
 
+    return 0;
 }
